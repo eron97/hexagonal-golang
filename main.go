@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"github.com/eron97/testesGo.git/estudos/hexagonal/adapters"
+	"github.com/eron97/testesGo.git/estudos/hexagonal/services"
+)
 
 func main() {
-	fmt.Println("hexagonal")
+	repositorio := &adapters.UsuarioRepositorioSQL{}
+	servico := services.NewUsuarioService(repositorio)
+
+	servico.CriarUsuario("UserMock", "mock@email.com")
 }
