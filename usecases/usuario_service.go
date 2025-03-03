@@ -1,11 +1,10 @@
-package services
+package usecases
 
 import (
 	"github.com/eron97/testesGo.git/estudos/hexagonal/domain"
 	"github.com/eron97/testesGo.git/estudos/hexagonal/ports"
 )
 
-// Implementa a lógica de negócio
 type UsuarioServiceImpl struct {
 	repositorio ports.UsuarioRepositorio
 }
@@ -15,6 +14,6 @@ func NewUsuarioService(repo ports.UsuarioRepositorio) *UsuarioServiceImpl {
 }
 
 func (s *UsuarioServiceImpl) CriarUsuario(nome string, email string) error {
-	usuario := domain.Usuario{Nome: nome, Email: email}
+	usuario := domain.Usuario{Nome: "Mock Name", Email: "mock@email.com"}
 	return s.repositorio.Salvar(usuario)
 }

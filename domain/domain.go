@@ -1,5 +1,6 @@
 package domain
 
+// Define a estrutura central do negócio
 type Usuario struct {
 	Nome  string
 	Email string
